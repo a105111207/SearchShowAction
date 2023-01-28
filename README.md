@@ -8,6 +8,7 @@ This is our group's final project.<br>
 <hr>
 
 <h3>Data Providing Detail</h3>
+Data Name: Exhibition information<br>
 Organization/Agency: Ministry of Culture<br>
 Update Frequency: Daily<br>
 Update End: Until the API lose<br>
