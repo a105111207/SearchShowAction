@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>展覽資訊</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="Shortcut Icon" type="icon" href="image/icon.png" />
+    <!--
+	<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <!-- <div class="se-pre-con"></div> -->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="background-color:#717269" ;>
+        <a class="navbar-brand" href="#">展覽資訊</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><img src="image/home.png" alt="home"> <span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+
+        </div>
+    </nav>
+    <section id="banner" data-video="images/banner">
+        <div class="inner">
+            <h1>展覽資訊</h1>
+
+        </div>
+    </section>
+    <div class="container-fluid" style="padding:20px 20px;margin-top:5px;">
+        <div class="content">
+            <div id="header">
+                <form>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="form-group">
+                                <label class="control-label" for="search_key">關鍵字搜尋：</label>
+                                <input class="form-control mr-sm-2" id="search_key" type="text" placeholder="Search"
+                                    aria-label="Search">
+                                </input>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group">
+                                <label class="control-label" for="date">日期：</label>
+                                <select class="form-control" id="date">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group">
+                                <label class="control-label" for="locationName">活動地點：</label>
+                                <select class="form-control" id="locationName">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button id="search_action" type="button" class="btn btn-secondary btn-lg btn-block">
+                            <i class="fas fa-spinner fa-spin not_show"></i>搜尋
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <table id="employee" class="table table-bordered table table-hover" cellspacing="0" width="100%">
+                <colgroup>
+                    <col width="10%" />
+                    <col width="20%" />
+                    <col width="10%" />
+                    <col width="10%" />
+                    <col width="10%" />
+                    <col width="10%" />
+                    <col width="10%" />
+                    <col width="10%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>活動名稱</th>
+                        <th>簡介說明</th>
+                        <th>主辦單位</th>
+                        <th>活動起始日期</th>
+                        <th>活動結束日期</th>
+                        <th>地址</th>
+                        <th>場地名稱</th>
+                        <th>售票說明</th>
+                    </tr>
+                </thead>
+                <tbody id="emp_body"></tbody>
+            </table>
+            <div id="pager">
+                <ul id="pagination" class="pagination-sm"></ul>
+            </div>
+        </div>
+        <div id="footer">
+
+            <a href="https://www.oit.edu.tw/bin/home.php"></a>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="js/app.js"></script>
+
+</html>
